@@ -5,6 +5,6 @@ This APP made with Flutter allows you to sign in and sign out in Odoo hr_attenda
 It is not tested in iphone yet
 
 
-## Creator
+## Contributors
 
 ### [José Márquez Doblas](https://github.com/IronSenior)
