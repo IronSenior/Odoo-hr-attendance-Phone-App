@@ -25,11 +25,16 @@ dependencies:
   cupertino_icons: ^0.1.2
   font_awesome_flutter: 8.5.0
   odoo_api: ^1.0.4
+  shared_preferences: ^0.4.3
+
+assets:
+  - .env
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 
 # For information on the generic Dart part of this file, see the
