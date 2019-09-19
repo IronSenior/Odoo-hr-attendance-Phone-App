@@ -43,10 +43,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     _client.authenticate(prefs.getString("User_Name"), prefs.getString("Password"), prefs.getString("Odoo_Database")).then((auth) {
         if(auth.isSuccess) {
-          _user = auth.getUser();
+          // The hr_employee Object is the one who register the attendance
           _client.searchRead("hr.employee", [["user_id", "=", auth.getUser().uid]], ["id"]).then((employeeResult) {
             if(! employeeResult.hasError()){
               var _employee = employeeResult.getResult()["records"][0]["id"];
+              // Call the attendance_manual method that will do the rest in server side
               _client.callKW("hr.employee", "attendance_manual", [_employee, "hr_attendance.hr_attendance_action_my_attendances"]).then((kwResult) {
                 if(! kwResult.hasError()){
                   setState(() {
@@ -156,48 +157,53 @@ class _SettingsState extends State<SettingsPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 TextFormField(
+                  autocorrect: false,
                   decoration: InputDecoration(
                     hintText: 'Odoo URL'
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter odoo URL';
                     }
                     return null;
                   },
                   controller: _urlController,
                 ),
                 TextFormField(
+                  autocorrect: false,
                   decoration: InputDecoration(
                     hintText: 'Database'
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter Odoo database name';
                     }
                     return null;
                   },
                   controller: _databaseController,
                 ),
                 TextFormField(
+                  autocorrect: false,
                   decoration: InputDecoration(
                     hintText: 'Login'
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter your login';
                     }
                     return null;
                   },
                   controller: _userNameController,
                 ),
                 TextFormField(
+                  autocorrect: false,
+                  obscureText: true,
                   decoration: InputDecoration(
                     hintText: 'Password'
                   ),
                   validator: (value) {
                     if (value.isEmpty) {
-                      return 'Please enter some text';
+                      return 'Please enter your password';
                     }
                     return null;
                   },
