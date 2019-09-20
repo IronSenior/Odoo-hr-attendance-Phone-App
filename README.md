@@ -81,8 +81,8 @@ José Márquez Doblas - [@PepeMarquezOF](https://twitter.com/PepeMarquezOF) - pe
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-shield]: https://img.shields.io/github/contributors/IronSenior/Odoo-hr-attendance-Phone-App
+[forks-shield]: https://img.shields.io/github/forks/IronSenior/Odoo-hr-attendance-Phone-App
+[stars-shield]: https://img.shields.io/github/stars/IronSenior/Odoo-hr-attendance-Phone-App
+[issues-shield]: https://img.shields.io/github/issues/IronSenior/Odoo-hr-attendance-Phone-App
+[license-shield]: https://img.shields.io/github/license/IronSenior/Odoo-hr-attendance-Phone-App
