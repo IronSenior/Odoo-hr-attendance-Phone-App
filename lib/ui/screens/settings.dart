@@ -39,7 +39,7 @@ class _SettingsState extends State<SettingsPage> {
   @mustCallSuper
   void initState() {
     // This method will be called every time the screen is started
-    // It checks the connection with the user data
+    // It checks the connection with the odoo server
     _checkConnectionState();
   }
 
