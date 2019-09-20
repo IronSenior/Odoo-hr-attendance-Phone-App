@@ -7,7 +7,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/IronSenior/Odoo-hr-attendance-Phone-App">
-    <img src="https://raw.githubusercontent.com/IronSenior/Odoo-hr-attendance-Phone-App/master/android/app/src/main/ic_launcher.png" alt="Logo" width="80" height="80">
+    <img src="https://raw.githubusercontent.com/IronSenior/Odoo-hr-attendance-Phone-App/master/android/app/src/main/ic_launcher.png" alt="Logo" width="150" height="150">
   </a>
 
   <h3 align="center">Odoo Attendance App</h3>
@@ -36,7 +36,6 @@
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
-* [Acknowledgements](#acknowledgements)
 
 
 
