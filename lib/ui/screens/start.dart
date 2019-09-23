@@ -19,40 +19,42 @@ class _MyHomePageState extends State<MyHomePage> {
   var _client;
 
   void _checkEmployeeState() async {
+    // It checks the employee state
     final prefs = await SharedPreferences.getInstance();
-
     _client = new OdooClient((prefs.getString("Odoo_URL") ?? ""));
 
-    _client.authenticate(prefs.getString("User_Name"), prefs.getString("Password"),prefs.getString("Odoo_Database"))
-      .then((auth) {
-        if (auth.isSuccess) {
-          // The hr_employee Object is the one who register the attendance
-          _client.searchRead("hr.employee", [["user_id", "=", auth.getUser().uid]], [
-            "id", "attendance_state"
-          ]).then((employeeResult) {
-            if (!employeeResult.hasError()) {
-              var employeeState = employeeResult.getResult()["records"][0]["attendance_state"];
-              // Check the state of employee at start
-              if (employeeState == "checked_in") {
-                setState(() {
-                  _employeeIn = true;
-                });
-              }
-              else{
-                setState(() {
-                  _employeeIn = false;
-                });
-              }
-
+    _client
+        .authenticate(prefs.getString("User_Name"), prefs.getString("Password"),
+            prefs.getString("Odoo_Database"))
+        .then((auth) {
+      if (auth.isSuccess) {
+        // The hr_employee Object is the one who register the attendance
+        _client.searchRead("hr.employee", [
+          ["user_id", "=", auth.getUser().uid]
+        ], [
+          "id",
+          "attendance_state"
+        ]).then((employeeResult) {
+          if (!employeeResult.hasError()) {
+            var employeeState =
+                employeeResult.getResult()["records"][0]["attendance_state"];
+            if (employeeState == "checked_in") {
+              setState(() {
+                _employeeIn = true;
+              });
+            } else {
+              setState(() {
+                _employeeIn = false;
+              });
             }
-          });
-        }
-    })
-    .catchError((e) {
+          }
+        });
+      }
+    }).catchError((e) {
       Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SettingsPage(title: "Settings")));
+          context,
+          MaterialPageRoute(
+              builder: (context) => SettingsPage(title: "Settings")));
     });
   }
 
@@ -90,12 +92,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-
   @protected
   @mustCallSuper
   void initState() {
     // This method will be called every time the screen is started
-    // It checks the connection with the odoo server
+    // It checks the Employee state at start
     _checkEmployeeState();
   }
 
