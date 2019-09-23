@@ -105,6 +105,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(FontAwesomeIcons.sync),
+            onPressed: _checkEmployeeState,
+          ),
+        ]
       ),
       body: Center(
         child: Column(
