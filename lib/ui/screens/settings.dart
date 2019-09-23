@@ -27,7 +27,7 @@ class _SettingsState extends State<SettingsPage> {
   void _checkConnectionState() async {
     final prefs = await SharedPreferences.getInstance();
     _client = new OdooClient(
-        (prefs.getString("Odoo_URL") ?? "http://82.223.32.157:8071"));
+        (prefs.getString("Odoo_URL") ?? ""));
     _client.connect().then((version) {
       setState(() {
         _connected = true;
@@ -59,7 +59,7 @@ class _SettingsState extends State<SettingsPage> {
                   children: <Widget>[
                     TextFormField(
                       autocorrect: false,
-                      decoration: InputDecoration(hintText: 'Odoo URL'),
+                      decoration: InputDecoration(hintText: 'Odoo URL http://..'),
                       validator: (value) {
                         if (value.isEmpty) {
                           return 'Please enter odoo URL';
@@ -112,11 +112,10 @@ class _SettingsState extends State<SettingsPage> {
                         final prefs = await SharedPreferences.getInstance();
                         if (_formKey.currentState.validate()) {
                           prefs.setString("Odoo_URL", _urlController.text);
-                          prefs.setString(
-                              "Odoo_Database", _databaseController.text);
-                          prefs.setString(
-                              "User_Name", _userNameController.text);
+                          prefs.setString("Odoo_Database", _databaseController.text);
+                          prefs.setString("User_Name", _userNameController.text);
                           prefs.setString("Password", _passwordController.text);
+                          _checkConnectionState();
                         }
                       },
                       child: Text('Save'),
