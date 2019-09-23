@@ -18,7 +18,7 @@
     <a href="https://github.com/IronSenior/Odoo-hr-attendance-Phone-App"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/IronSenior/Odoo-hr-attendance-Phone-App">View Demo</a>
+    <a href="https://play.google.com/store/apps/details?id=com.ironsenior.odoo_hr">Google Play</a>
     ·
     <a href="https://github.com/IronSenior/Odoo-hr-attendance-Phone-App/issues">Report Bug</a>
     ·
